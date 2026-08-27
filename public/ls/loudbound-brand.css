@@ -410,3 +410,42 @@ a.nectar-button.see-through-2 {
   width: auto !important;
   height: auto !important;
 }
+
+/* ==================== MOBILE CONTENT FIXES (phones <=767px) ==================== */
+@media (max-width: 767px) {
+  /* Job cards: the 28px title wrapped huge in the narrow card — scale it down */
+  .lb-job-card h3 { font-size: 19px !important; line-height: 1.2 !important; min-height: 0 !important; }
+  .lb-job-card { font-size: 14px !important; }
+  .lb-jobs .slick-slide { padding: 0 6px !important; }
+
+  /* Contact: the Loudbound logomark watermark bled up behind the SEND button — hide on mobile */
+  #contact .row-bg.using-image { background-image: none !important; }
+
+  /* Contact: stack columns so the info + form don't sit side-by-side and overflow */
+  #contact .vc_col-sm-6 { width: 100% !important; flex: 0 0 100% !important; max-width: 100% !important; }
+  #contact .vc_column-inner, #contact .wpb_wrapper { flex-direction: column !important; }
+  /* Emails: force each onto its own line and never overflow the viewport */
+  #contact a[href*="email-protection"], #contact a[href*="mailto"], #contact .footer-info a,
+  #contact p a { display: block !important; max-width: 100% !important;
+    word-break: break-all !important; overflow-wrap: anywhere !important; }
+  #contact .footer-info { display: none !important; }  /* keep the hidden footer email block hidden (was duplicating on mobile) */
+
+  /* Footer branding logo was 458px wide (overflowed the screen) — shrink it */
+  #footer-outer img[src*="footer-logo"] { height: 38px !important; }
+}
+
+/* Mobile: keep the Mission/Vision "statement" content centered like desktop (sm-text-left was left-aligning it) */
+@media (max-width: 767px) {
+  #about-old .nectar-responsive-text, #about-old .nectar-responsive-text p,
+  #about-old .nectar-text-inline-images__inner,
+  #fws_6a226804e101d .nectar-responsive-text, #fws_6a226804e101d .nectar-responsive-text p,
+  #fws_6a226804e101d .nectar-text-inline-images__inner {
+    text-align: center !important;
+  }
+}
+
+/* Mobile: the "What is Loudbound" text column had a 56px desktop left-gap that pushed it
+   off-center on phones — zero it so the content centers in the viewport */
+@media (max-width: 767px) {
+  #fws_6a2268037e4fd .what-col { padding-left: 20px !important; padding-right: 20px !important; }
+}

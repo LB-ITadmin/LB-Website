@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
         breakpoint: 540,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
+          centerMode: false,
         },
       },
     ],
