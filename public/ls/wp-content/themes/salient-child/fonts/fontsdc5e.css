@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Aspekta Variable";
+    font-weight: 100 900;
+    font-style: normal;
+    src: url("AspektaVF.ttf") format("ttf"),
+          url("AspektaVF.woff2") format("woff2"),
+  }
+  
+  @font-face {
+    font-family: "Aspekta 100 Regular";
+    font-weight: 100;
+    font-style: normal;
+    src: url("Aspekta-100.ttf") format("ttf"),
+          url("Aspekta-100.otf") format("otf"),
+          url("Aspekta-100.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 150 Regular";
+    font-weight: 150;
+    font-style: normal;
+    src: url("Aspekta-150.ttf") format("ttf"),
+          url("Aspekta-150.otf") format("otf"),
+          url("Aspekta-150.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 200 Regular";
+    font-weight: 200;
+    font-style: normal;
+    src: url("Aspekta-200.ttf") format("ttf"),
+          url("Aspekta-200.otf") format("otf"),
+          url("Aspekta-200.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 250 Regular";
+    font-weight: 250;
+    font-style: normal;
+    src: url("Aspekta-250.ttf") format("ttf"),
+          url("Aspekta-250.otf") format("otf"),
+          url("Aspekta-250.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 300 Regular";
+    font-weight: 300;
+    font-style: normal;
+    src: url("Aspekta-300.ttf") format("ttf"),
+          url("Aspekta-300.otf") format("otf"),
+          url("Aspekta-300.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 350 Regular";
+    font-weight: 350;
+    font-style: normal;
+    src: url("Aspekta-350.ttf") format("ttf"),
+          url("Aspekta-350.otf") format("otf"),
+          url("Aspekta-350.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 400 Regular";
+    font-weight: 400;
+    font-style: normal;
+    src: url("Aspekta-400.ttf") format("ttf"),
+          url("Aspekta-400.otf") format("otf"),
+          url("Aspekta-400.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 450 Regular";
+    font-weight: 450;
+    font-style: normal;
+    src: url("Aspekta-450.ttf") format("ttf"),
+          url("Aspekta-450.otf") format("otf"),
+          url("Aspekta-450.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 500 Regular";
+    font-weight: 500;
+    font-style: normal;
+    src: url("Aspekta-500.ttf") format("ttf"),
+          url("Aspekta-500.otf") format("otf"),
+          url("Aspekta-500.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 550 Regular";
+    font-weight: 550;
+    font-style: normal;
+    src: url("Aspekta-550.ttf") format("ttf"),
+          url("Aspekta-550.otf") format("otf"),
+          url("Aspekta-550.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 600 Regular";
+    font-weight: 600;
+    font-style: normal;
+    src: url("Aspekta-600.ttf") format("ttf"),
+          url("Aspekta-600.otf") format("otf"),
+          url("Aspekta-600.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 650 Regular";
+    font-weight: 650;
+    font-style: normal;
+    src: url("Aspekta-650.ttf") format("ttf"),
+          url("Aspekta-650.otf") format("otf"),
+          url("Aspekta-650.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 700 Regular";
+    font-weight: 700;
+    font-style: normal;
+    src: url("Aspekta-700.ttf") format("ttf"),
+          url("Aspekta-700.otf") format("otf"),
+          url("Aspekta-700.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 750 Regular";
+    font-weight: 750;
+    font-style: normal;
+    src: url("Aspekta-750.ttf") format("ttf"),
+          url("Aspekta-750.otf") format("otf"),
+          url("Aspekta-750.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 800 Regular";
+    font-weight: 800;
+    font-style: normal;
+    src: url("Aspekta-800.ttf") format("ttf"),
+          url("Aspekta-800.otf") format("otf"),
+          url("Aspekta-800.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 850 Regular";
+    font-weight: 850;
+    font-style: normal;
+    src: url("Aspekta-850.ttf") format("ttf"),
+          url("Aspekta-850.otf") format("otf"),
+          url("Aspekta-850.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 900 Regular";
+    font-weight: 900;
+    font-style: normal;
+    src: url("Aspekta-900.ttf") format("ttf"),
+          url("Aspekta-900.otf") format("otf"),
+          url("Aspekta-900.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 950 Regular";
+    font-weight: 950;
+    font-style: normal;
+    src: url("Aspekta-950.ttf") format("ttf"),
+          url("Aspekta-950.otf") format("otf"),
+          url("Aspekta-950.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Aspekta 1000 Regular";
+    font-weight: 1000;
+    font-style: normal;
+    src: url("Aspekta-1000.ttf") format("ttf"),
+          url("Aspekta-1000.otf") format("otf"),
+          url("Aspekta-1000.woff") format("woff")
+  }
+  
+  @font-face {
+    font-family: "Akkurat-Mono";
+    font-style: normal;
+    src: url("Akkurat-Mono.otf") format("otf"),
+        url("Akkurat-Mono.woff") format("woff"),
+        url("Akkurat-Mono.ttf") format("ttf")
+  }
