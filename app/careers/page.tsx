@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CookieConsent from "../components/CookieConsent";
 import ScrollTop from "../components/ScrollTop";
 import CareersPage from "../components/CareersPage";
+import RedirectHome from "../components/RedirectHome";
 import { SHOW_CAREERS } from "../flags";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function Careers() {
-  if (!SHOW_CAREERS) redirect("/");
+  if (!SHOW_CAREERS) return <RedirectHome />;
   return (
     <>
       <Header />
