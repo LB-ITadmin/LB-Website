@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logomark from "./Logomark";
+import { SHOW_CAREERS } from "../flags";
 
 const NAV: { label: string; hash: string; page?: string }[] = [
   { label: "Expertise", hash: "#expertise" },
   { label: "About Us", hash: "#about" },
-  { label: "Careers", hash: "#careers", page: "/careers" },
+  ...(SHOW_CAREERS
+    ? [{ label: "Careers", hash: "#careers", page: "/careers" }]
+    : []),
 ];
 
 export default function Header() {

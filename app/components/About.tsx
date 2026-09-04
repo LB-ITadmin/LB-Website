@@ -1,4 +1,5 @@
 import Logomark from "./Logomark";
+import { SHOW_CAREERS } from "../flags";
 
 export default function About() {
   return (
@@ -30,12 +31,14 @@ export default function About() {
               leaders.
             </p>
           </div>
-          <a className="lb-about__cta" href="/careers">
-            Come work with us
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+          {SHOW_CAREERS && (
+            <a className="lb-about__cta" href="/careers">
+              Come work with us
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          )}
         </div>
 
         <div className="lb-about__media">

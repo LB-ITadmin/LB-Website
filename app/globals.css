@@ -1146,6 +1146,8 @@ section[id], main[id] { scroll-margin-top: 88px; }
 .lb-check input { width: 18px; height: 18px; accent-color: var(--mustard); }
 .lb-contact__send { display: inline-flex; align-items: center; gap: 8px; background: var(--mustard); color: var(--ink); padding: 15px 32px; border-radius: 999px; font-family: var(--font-display); font-weight: 700; font-size: 16px; border: 0; cursor: pointer; transition: transform .2s ease, filter .2s ease; }
 .lb-contact__send:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.lb-contact__send:disabled { opacity: 0.6; cursor: default; transform: none; }
+.lb-contact__error { margin: 14px 0 0; color: #ff9d7a; font-size: 0.92rem; }
 .lb-contact__thanks { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: clamp(30px,4vw,50px); border: 1.5px solid rgba(254,214,93,.5); border-radius: 18px; }
 .lb-contact__thanks-mark { width: 56px; height: 56px; border-radius: 50%; background: var(--mustard); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
 .lb-contact__thanks h3 { font-family: var(--font-display); font-size: clamp(24px,2.4vw,34px); color: var(--cream); }

@@ -1,11 +1,12 @@
 import Logomark from "./Logomark";
+import { SHOW_CAREERS, SHOW_LINKEDIN } from "../flags";
 
 const YEAR = new Date().getFullYear();
 
 const SITEMAP = [
   { label: "Expertise", href: "#expertise" },
   { label: "About Us", href: "#about" },
-  { label: "Careers", href: "/careers" },
+  ...(SHOW_CAREERS ? [{ label: "Careers", href: "/careers" }] : []),
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
@@ -72,21 +73,23 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="lb-footer__col">
-          <span className="mono lb-footer__label">Social</span>
-          <ul>
-            {SOCIAL.map((l) => (
-              <li key={l.label}>
-                <a href={l.href} className="lb-footer__social">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    {l.icon}
-                  </svg>
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {SHOW_LINKEDIN && (
+          <div className="lb-footer__col">
+            <span className="mono lb-footer__label">Social</span>
+            <ul>
+              {SOCIAL.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="lb-footer__social">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      {l.icon}
+                    </svg>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="lb-footer__col">
           <span className="mono lb-footer__label">Get in touch</span>
@@ -94,9 +97,11 @@ export default function Footer() {
             <li>
               <a href="mailto:info@loudbound.com">info@loudbound.com</a>
             </li>
-            <li>
-              <a href="mailto:careers@loudbound.com">careers@loudbound.com</a>
-            </li>
+            {SHOW_CAREERS && (
+              <li>
+                <a href="mailto:careers@loudbound.com">careers@loudbound.com</a>
+              </li>
+            )}
           </ul>
         </div>
       </div>

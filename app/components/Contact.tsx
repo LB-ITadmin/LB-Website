@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Logomark from "./Logomark";
+import { SHOW_CAREERS, SHOW_LINKEDIN } from "../flags";
 
 function LinkedIn({ size = 18 }: { size?: number }) {
   return (
@@ -13,6 +14,39 @@ function LinkedIn({ size = 18 }: { size?: number }) {
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@loudbound.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          message: data.get("message"),
+          _subject: "New enquiry from loudbound.com",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      if (!res.ok) throw new Error("request failed");
+      setSent(true);
+    } catch {
+      setError(
+        "Something went wrong. Please email info@loudbound.com directly."
+      );
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <section className="lb-contact" id="contact">
@@ -38,16 +72,20 @@ export default function Contact() {
               <span className="mono lb-contact__label">General</span>
               <a href="mailto:info@loudbound.com">info@loudbound.com</a>
             </div>
-            <div>
-              <span className="mono lb-contact__label">Careers</span>
-              <a href="mailto:careers@loudbound.com">careers@loudbound.com</a>
-            </div>
+            {SHOW_CAREERS && (
+              <div>
+                <span className="mono lb-contact__label">Careers</span>
+                <a href="mailto:careers@loudbound.com">careers@loudbound.com</a>
+              </div>
+            )}
           </div>
 
-          <a className="lb-contact__social" href="#" aria-label="Follow us on LinkedIn">
-            <span>Follow us on</span>
-            <LinkedIn />
-          </a>
+          {SHOW_LINKEDIN && (
+            <a className="lb-contact__social" href="#" aria-label="Follow us on LinkedIn">
+              <span>Follow us on</span>
+              <LinkedIn />
+            </a>
+          )}
         </div>
 
         {sent ? (
@@ -59,13 +97,7 @@ export default function Contact() {
             <p>Thanks for reaching out. We&rsquo;ll be in touch shortly.</p>
           </div>
         ) : (
-          <form
-            className="lb-contact__form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
-          >
+          <form className="lb-contact__form" onSubmit={handleSubmit}>
             <label className="lb-field">
               <span>Full name*</span>
               <input type="text" name="name" required autoComplete="name" />
@@ -87,13 +119,16 @@ export default function Contact() {
                 <input type="checkbox" required />
                 <span>Accept terms &amp; conditions.</span>
               </label>
-              <button className="lb-contact__send" type="submit">
-                Send
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <button className="lb-contact__send" type="submit" disabled={sending}>
+                {sending ? "Sending..." : "Send"}
+                {!sending && (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
               </button>
             </div>
+            {error && <p className="lb-contact__error">{error}</p>}
           </form>
         )}
       </div>

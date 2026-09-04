@@ -1,3 +1,5 @@
+import { SHOW_CAREERS, SHOW_LINKEDIN } from "../flags";
+
 export default function Hero() {
   return (
     <main id="top" className="lb-hero2">
@@ -36,33 +38,39 @@ export default function Hero() {
               <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <a className="lb-btn lb-btn--mustard" href="/careers">
-            Careers
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-          <a className="lb-btn lb-btn--ghost" href="#" aria-label="Follow us on LinkedIn">
-            Follow us on
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.48 2.48 0 0 1 4.98 3.5zM2.9 8.9h4.16V21H2.9zM9.5 8.9h3.99v1.65h.06a4.37 4.37 0 0 1 3.93-2.16c4.2 0 4.98 2.77 4.98 6.37V21h-4.16v-5.36c0-1.28 0-2.92-1.78-2.92s-2.06 1.39-2.06 2.83V21H9.5z" />
-            </svg>
-          </a>
+          {SHOW_CAREERS && (
+            <a className="lb-btn lb-btn--mustard" href="/careers">
+              Careers
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          )}
+          {SHOW_LINKEDIN && (
+            <a className="lb-btn lb-btn--ghost" href="#" aria-label="Follow us on LinkedIn">
+              Follow us on
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.48 2.48 0 0 1 4.98 3.5zM2.9 8.9h4.16V21H2.9zM9.5 8.9h3.99v1.65h.06a4.37 4.37 0 0 1 3.93-2.16c4.2 0 4.98 2.77 4.98 6.37V21h-4.16v-5.36c0-1.28 0-2.92-1.78-2.92s-2.06 1.39-2.06 2.83V21H9.5z" />
+              </svg>
+            </a>
+          )}
         </div>
       </div>
 
       {/* Grow Your Career — side card */}
-      <a className="lb-grow" href="/careers">
-        <span className="lb-grow__icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <path d="M7 7v10h10M7 17 18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-        <span className="lb-grow__body">
-          <span className="lb-grow__title">Grow Your Career</span>
-          <span className="lb-grow__sub">Take a look at our open positions and apply.</span>
-        </span>
-      </a>
+      {SHOW_CAREERS && (
+        <a className="lb-grow" href="/careers">
+          <span className="lb-grow__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M7 7v10h10M7 17 18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <span className="lb-grow__body">
+            <span className="lb-grow__title">Grow Your Career</span>
+            <span className="lb-grow__sub">Take a look at our open positions and apply.</span>
+          </span>
+        </a>
+      )}
 
       <span className="mono lb-hero2__scroll" aria-hidden="true">
         Scroll ↓

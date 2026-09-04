@@ -13,6 +13,7 @@ import JobOpenings from "./components/JobOpenings";
 import Footer from "./components/Footer";
 import CookieConsent from "./components/CookieConsent";
 import ScrollTop from "./components/ScrollTop";
+import { SHOW_CAREERS } from "./flags";
 
 export default function Home() {
   return (
@@ -24,10 +25,10 @@ export default function Home() {
       <About />
       <Values />
       <Statement />
-      <Careers />
+      {SHOW_CAREERS && <Careers />}
       <Mission />
       <Vision />
-      <JobOpenings />
+      {SHOW_CAREERS && <JobOpenings />}
       <Contact />
       <Footer />
       <CookieConsent />
