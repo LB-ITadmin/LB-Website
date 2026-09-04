@@ -6,4 +6,4 @@ export const SHOW_LINKEDIN = false;
 
 // Contact form delivery (Web3Forms). Get a free access key at https://web3forms.com
 // by entering info@loudbound.com — the key is emailed to that inbox. Paste it here.
-export const WEB3FORMS_ACCESS_KEY = "dd361a66-79dc-444e-895a-d311183aa975";
+export const WEB3FORMS_ACCESS_KEY = "ed2b4238-d466-474b-82bc-936217314ba4";
