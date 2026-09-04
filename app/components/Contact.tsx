@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Logomark from "./Logomark";
-import { SHOW_CAREERS, SHOW_LINKEDIN } from "../flags";
+import { SHOW_CAREERS, SHOW_LINKEDIN, WEB3FORMS_ACCESS_KEY } from "../flags";
 
 function LinkedIn({ size = 18 }: { size?: number }) {
   return (
@@ -24,20 +24,21 @@ export default function Contact() {
     setSending(true);
     setError("");
     try {
-      const res = await fetch("https://formsubmit.co/ajax/info@loudbound.com", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "New enquiry from loudbound.com",
+          from_name: "Loudbound website",
           name: data.get("name"),
           email: data.get("email"),
           phone: data.get("phone"),
           message: data.get("message"),
-          _subject: "New enquiry from loudbound.com",
-          _template: "table",
-          _captcha: "false",
         }),
       });
-      if (!res.ok) throw new Error("request failed");
+      const json = await res.json().catch(() => ({ success: false }));
+      if (!res.ok || !json.success) throw new Error("request failed");
       setSent(true);
     } catch {
       setError(
